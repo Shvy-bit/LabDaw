@@ -1,0 +1,26 @@
+function Ej01() {
+    const Dia = document.getElementById("Dia").value;
+    const resultado = document.getElementById("Resultado01");
+    let nombreDia = "";
+    const dias = [
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado"
+    ];
+    if (Dia < 0 || Dia > 6) nombreDia = "Número de día inválido";
+    else nombreDia = "El día es: " + dias[Dia];
+    resultado.textContent = nombreDia;
+}
+function Ej02() {
+    const Text = document.getElementById("Text").value;
+    const resultado = document.getElementById("Resultado02");
+    let textInvertido = "";
+    for (let i = Text.length - 1; i >= 0; i--) {
+        textInvertido += Text[i];
+    }
+    resultado.textContent = "Texto invertido: " + textInvertido;
+}
