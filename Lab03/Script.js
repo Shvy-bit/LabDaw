@@ -22,4 +22,18 @@ function Ej03() {
     const diaArequipa = new Date(hoy.getFullYear(), 8, 15);
     const diferencia = Math.ceil((diaArequipa - hoy) / (1000 * 60 * 60 * 24));
     resultado.textContent = "Faltan: " + diferencia + " días";
+}function Ej04() {
+    const codigo = document.getElementById("Codigo").value;
+    const resultado = document.getElementById("Resultado04");
+    let cd = "";
+    // Verifica si la url empieza con https://meet.google.com/ y que qkj-uksn-nbc pase a qkjuksnnbc
+    if (codigo.startsWith("https://meet.google.com/")) {
+        const partes = codigo.split("/");
+        if (partes.length === 4) {
+            const codigoReunion = partes[3].replace(/-/g, "");
+            cd = "Código de reunión: " + codigoReunion;
+        }
+    }
+    else cd = "URL inválida";
+    resultado.textContent = cd;
 }
