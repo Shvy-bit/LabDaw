@@ -2,15 +2,7 @@ function Ej01() {
     const Dia = document.getElementById("Dia").value;
     const resultado = document.getElementById("Resultado01");
     let nombreDia = "";
-    const dias = [
-        "Domingo",
-        "Lunes",
-        "Martes",
-        "Miercoles",
-        "Jueves",
-        "Viernes",
-        "Sabado"
-    ];
+    const dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
     if (Dia < 0 || Dia > 6) nombreDia = "Número de día inválido";
     else nombreDia = "El día es: " + dias[Dia];
     resultado.textContent = nombreDia;
@@ -23,4 +15,11 @@ function Ej02() {
         textInvertido += Text[i];
     }
     resultado.textContent = "Texto invertido: " + textInvertido;
+}
+function Ej03() {
+    const resultado = document.getElementById("Resultado03");
+    const hoy = new Date();
+    const diaArequipa = new Date(hoy.getFullYear(), 8, 15);
+    const diferencia = Math.ceil((diaArequipa - hoy) / (1000 * 60 * 60 * 24));
+    resultado.textContent = "Faltan: " + diferencia + " días";
 }
