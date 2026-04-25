@@ -22,11 +22,11 @@ function Ej03() {
     const diaArequipa = new Date(hoy.getFullYear(), 8, 15);
     const diferencia = Math.ceil((diaArequipa - hoy) / (1000 * 60 * 60 * 24));
     resultado.textContent = "Faltan: " + diferencia + " días";
-}function Ej04() {
+}
+function Ej04() {
     const codigo = document.getElementById("Codigo").value;
     const resultado = document.getElementById("Resultado04");
     let cd = "";
-    // Verifica si la url empieza con https://meet.google.com/ y que qkj-uksn-nbc pase a qkjuksnnbc
     if (codigo.startsWith("https://meet.google.com/")) {
         const partes = codigo.split("/");
         if (partes.length === 4) {
@@ -36,4 +36,25 @@ function Ej03() {
     }
     else cd = "URL inválida";
     resultado.textContent = cd;
+}
+function Ej05Gen() {
+    const cantidad = parseInt(document.getElementById("Cantidad").value);
+    const resultado = document.getElementById("Resultado05");
+    let numeros = [];
+    for (let i = 0; i < cantidad; i++) {
+        numeros.push(Math.floor(Math.random() * 100 + 1));
+    }
+    resultado.innerHTML = "<p>Números generados: " + numeros.join(", ") + "</p>";
+    const btnSumar = document.createElement("button");
+    btnSumar.textContent = "Sumar";
+    btnSumar.onclick = () => Ej05Sum(numeros);
+    resultado.appendChild(btnSumar);
+    const resultadoSuma = document.createElement("p");
+    resultadoSuma.id = "Resultado05Sum";
+    resultado.appendChild(resultadoSuma);
+}
+function Ej05Sum(numeros) {
+    const resultado = document.getElementById("Resultado05Sum");
+    const suma = numeros.reduce((acc, num) => acc + num, 0);
+    resultado.textContent = "Suma de los números: " + suma;
 }
