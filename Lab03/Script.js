@@ -58,3 +58,5 @@ function Ej05Sum(numeros) {
     const suma = numeros.reduce((acc, num) => acc + num, 0);
     resultado.textContent = "Suma de los números: " + suma;
 }
+function Ej06Pag1() {window.location.href = "Pag1.html"}
+function Ej06Pag2() {window.location.href = "Pag2.html"}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulador de Texto</title>
+</head>
+<body>
+    <h1 id="Text">¡Hola! Soy un texto interactivo</h1>
+    <div class="controles">
+        <button onclick="Style1()">Primer estilo</button>
+        <button onclick="Style2()">Segundo estilo</button>
+    </div>
+    <script>
+        function Style1() {
+            document.getElementById("Text").style.fontSize = '40px';
+            document.getElementById("Text").style.color = 'tomato';
+        }
+        function Style2() {
+            document.getElementById("Text").style.fontSize = '18px';
+            document.getElementById("Text").style.color = 'royalblue';
+        }
+    </script>
+</body>
+</html>
