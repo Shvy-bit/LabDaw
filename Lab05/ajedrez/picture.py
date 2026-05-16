@@ -16,7 +16,7 @@ class Picture:
     vertical = []
     for value in self.img:
       vertical.append(value[::-1])
-    return vertical
+    return Picture(vertical)
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
@@ -82,6 +82,12 @@ class Picture:
       new.append(linea.replace(' ', '_'))
     return Picture(new)
 
+  def squareN(self):
+    new = []
+    for linea in self.img:
+      new.append(linea.replace(' ', '='))
+    return Picture(new)
+  
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
     """Devuelve una figura rotada en 90 grados, puede ser en sentido horario

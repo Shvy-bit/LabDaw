@@ -1,0 +1,6 @@
+from ajedrez.interpreter import *
+from ajedrez.chessPictures import *
+
+fig1 = square.join(square.negative())
+fig2 = fig1.horizontalRepeat(4)
+draw(fig2)
