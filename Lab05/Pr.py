@@ -1,14 +1,16 @@
 from ajedrez.interpreter import *
-import ajedrez.chessPictures as piece
+from ajedrez.chessPictures import *
 from ajedrez.colors import *
 
 #from ajedrez.picture import *
 
-pieces = piece.king.up(piece.queen.negative())
+pieces = rock.verticalRepeat(5)
 draw(pieces)
 
-#a = Picture(["aña","ene","oo"])
-#b= Picture(["kyara","izi","uu"])
-#c = a.up(b)
-#for i in range(len(c.img)):
-#    print(c.img[i])
+#a = Picture(["aña ","ene ","oo "])
+#u = Picture(["K"])
+#b= Picture(["Array ","izi ","uu "])
+#c = Picture(["ang ", "oztia ", "waza "])
+#out = u.verticalRepeat(3)
+#for i in range(len(out.img)):
+#    print(out.img[i])

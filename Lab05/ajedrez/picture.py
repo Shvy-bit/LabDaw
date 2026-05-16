@@ -34,11 +34,16 @@ class Picture:
     """ Devuelve una nueva figura poniendo la figura del argumento
         al lado derecho de la figura actual """
     joined = []
-    for i in range(len(self.img)):
-      joined.append(self.img[i] + p.img[i])
+    for i in range(len(p.img)):
+      if i < len(self.img):
+        joined.append(self.img[i] + p.img[i])
+      else:
+        joined.append(p.img[i])
     return Picture(joined)
 
   def up(self, p):
+    """ Devuelve una nueva figura poniendo la figura actual sobre la
+        figura p """
     new = self.img
     for i in range(len(p.img)):
       new.append(p.img[i])
@@ -47,15 +52,31 @@ class Picture:
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-    return Picture(None)
+    new = p.img
+    for i in range(len(self.img)):
+      new.append(self.img[i])
+    return Picture(new)
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    hRepeat = self
+    for i in range(n - 1):
+      hRepeat = hRepeat.join(self)
+    #Solo retorna hRepeat dado que join devuelve una Picture de por si
+    return hRepeat
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    """ Devuelve una nueva figura repitiendo la figura actual hacia abajo
+        la cantidad de veces que indique el valor de n """
+    vRepeat = self.img[:]
+    for i in range(n - 1):
+      for j in range(len(self.img)):
+        vRepeat.append(self.img[j])
+    return Picture(vRepeat)
+  
+  def square(self):
+    """Devuelve una figura sobrepuesta en un cuadro"""
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
