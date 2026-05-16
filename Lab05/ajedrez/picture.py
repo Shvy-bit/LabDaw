@@ -77,6 +77,10 @@ class Picture:
   
   def square(self):
     """Devuelve una figura sobrepuesta en un cuadro"""
+    new = []
+    for linea in self.img:
+      new.append(linea.replace(' ', '_'))
+    return Picture(new)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):

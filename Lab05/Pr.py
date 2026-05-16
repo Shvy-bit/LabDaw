@@ -4,7 +4,8 @@ from ajedrez.colors import *
 
 #from ajedrez.picture import *
 
-pieces = rock.verticalRepeat(5)
+pieces = king.negative().square().join(square)
+
 draw(pieces)
 
 #a = Picture(["aña ","ene ","oo "])
