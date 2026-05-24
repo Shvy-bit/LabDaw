@@ -21,7 +21,7 @@ CREATE TABLE users (
 );
 CREATE TABLE clients (
     id_person INT PRIMARY KEY,
-    whosaler BOOLEAN NOT NULL,
+    wholesaler BOOLEAN NOT NULL,
     city VARCHAR(20),
     street VARCHAR(20) NOT NULL,
 
