@@ -8,7 +8,9 @@
 ### Solución a un problema real
 El problema es la creación de un sistema de ventas con varias sedes y que puede ser atendido por varios usuarios
 ### Elaboración del modelo lógico DER
+
 ![modelo lógico](./Readme/DER.png)
+
 El modelo lógico fue creado utilizando [DrawSQL](https://drawsql.app/teams/shovy/diagrams/lab06)
 ### Implementación del modelo fisico PostgreSQL
 ```sql
@@ -28,7 +30,9 @@ CREATE TABLE shops (
 [Ver codigo completo](./Lab06/DataBase.sql)
 ### Implementación en Supabase
 Con el codigo en SQL puro, se ejecuta en un projecto para la creación de las tablas
+
 ![Tablas en Supabase](./Readme/Supabase_tablas.png)
+
 Y se preba el funcionamiento con SQL Editor:
 ```sql
 INSERT INTO clients (id_person, wholesaler, city) VALUES (1, true, 'Arequipa');
