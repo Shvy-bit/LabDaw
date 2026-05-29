@@ -10,7 +10,7 @@ def crear_venta(request):
             return redirect('lista_notas')
     else:
         form = NotasForm()
-    return render(request, 'notas/lista_notas.html', {'form': form})
+    return render(request, 'notas/crear_venta.html', {'form': form})
 def lista_notas(request):
     notas = NotasAlumnosPorCurso.objects.all()
     return render(request, 'notas/lista_notas.html', {'notas': notas})
