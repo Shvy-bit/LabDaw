@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de notas</title>
+</head>
+<body>
+    <h1>Lista de notas</h1>
+    <ul>
+        {% for nota in notas %}
+            <li>Alumno: {{ nota.alumno.nombres }} {{ nota.alumno.apellidos }} | Curso: {{ nota.curso.nombre }} | Nota: {{ nota.nota }}</li>
+        {% endfor %}
+        </ul>
+    <a href="{% url 'guardar_nota' %}">Guardar nueva nota</a>
+</body>
+</html>

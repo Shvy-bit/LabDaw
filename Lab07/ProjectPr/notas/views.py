@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import NotasForm
 from .models import NotasAlumnosPorCurso
 
-def guardar_notas(request):
+def guardar_nota(request):
     if request.method == 'POST':
         form = NotasForm(request.POST)
         if form.is_valid():
@@ -10,7 +10,7 @@ def guardar_notas(request):
             return redirect('lista_notas')
     else:
         form = NotasForm()
-    return render(request, 'notas/guardar_notas.html', {'form': form})
+    return render(request, 'notas/guardar_nota.html', {'form': form})
 def lista_notas(request):
     notas = NotasAlumnosPorCurso.objects.all()
     return render(request, 'notas/lista_notas.html', {'notas': notas})
